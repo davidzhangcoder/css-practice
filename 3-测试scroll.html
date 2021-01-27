@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outter{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            overflow-y:scroll;
+        }
+    </style>
+</head>
+<body>
+    <button id="scroll">scroll</button>
+
+    <div id="outter">
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+        <div>hello1</div>
+    </div>
+
+    <script>
+        document.getElementById("scroll").onclick = doscroll
+        function doscroll() {
+            // alert('a');
+            console.log("outter");
+            document.getElementById("outter").scrollTo(0,300)
+        }
+    </script>
+</body>
+</html>

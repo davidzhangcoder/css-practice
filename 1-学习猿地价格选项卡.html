@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test{
+            width: 200px;
+            height: 10px;
+            margin: 20px auto;
+            border: 1px solid #aaa;
+            background-color: red;
+        }
+        .outter {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #aaa
+        }
+
+        .header-list {
+            position: relative;;
+            display: flex;
+            width: 200px;
+            flex-direction: row;
+        }
+
+        .header-list>div {
+            flex: 1;
+            text-align: center;
+            border: 1px solid #aaa
+        }
+
+        .header-list>div:nth-child(1) {
+            background-color: #a1a;
+        }
+
+        .header-list>div:nth-child(2) {
+            background-color: #1b1;
+        }
+
+        .header-list>div:nth-child(3) {
+            background-color: #ddd;
+        }
+
+        .header-list>div:nth-child(4) {
+            background-color: #e7e;
+        }
+
+        .header-list>div>div {
+            position:absolute;
+            content: "";
+            width: 200px;
+            height: 200px;
+            visibility: hidden;
+            background-color: #aaa;
+            left:0px;
+        }
+
+        .header-list>div:nth-child(1):hover .content1 {
+            visibility:visible;
+            background-color: #a1a;
+        }
+        .header-list>div:nth-child(2):hover .content2 {
+            visibility:visible;
+            background-color: #1b1;
+        }
+        .header-list>div:nth-child(3):hover .content3 {
+            visibility:visible;
+            background-color: #ddd;
+        }
+        .header-list>div:nth-child(4):hover .content4 {
+            visibility:visible;
+            background-color: #e7e;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="test">
+        a
+    </div>
+
+    <div class="outter">
+        <div class="header-list">
+            <div>
+                <span>限期</span>
+                <div class="content1">content1</div>
+            </div>
+            <div>
+                <span></span>永久</span>
+                <div class="content2">content2</div>
+            </div>
+            <div>
+                <span></span>组合</span>
+                <div class="content3">content3</div>
+            </div>
+            <div id="member">
+                <span></span>会员</span>
+                <div class="content4">content4</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="test">
+        a
+    </div>
+
+</body>
+
+</html>

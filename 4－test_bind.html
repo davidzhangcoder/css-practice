@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function test(a) {
+            console.log("test method, a is ", a)
+            console.log("test method, this is ", this)
+        }
+
+        // test(1)
+
+        // let b = {name:"this is b"}
+        // let testMethod = test.bind(b,2)
+        // testMethod();
+
+        let c = {name:"this is c"}
+        let testMethod = test.bind(c)
+        testMethod(3);
+
+    </script>
+</body>
+</html>
