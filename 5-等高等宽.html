@@ -10,6 +10,11 @@
             box-sizing: border-box;
         }
 
+        p, h5 {
+            padding: 0px;
+            margin: 0px;
+        }
+
         .container {
             width: 100%;
         }
@@ -80,6 +85,7 @@
             background-color: blue;
         } */
 
+        /* ------- */
         .container1 {
             width: 100%;
             display: flex;
@@ -122,6 +128,63 @@
         .content1:nth-child(2n+0) {
             background-color: blue;
         }
+
+        /* ------- */
+
+
+        /* ------- */
+        .container2 {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .content-outter{
+            width: 33.3%;
+        }
+
+        .content-outter h5,p {
+            text-align: center;
+        }
+
+        .content2 {
+            width: 100%;
+            /* flex: 1; */
+            position: relative;
+        }
+
+        .content2::before {
+            content: "";
+            padding-top: 100%;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .content2>.images {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .content2>.images>span {
+            background: url(./images/pic1.jpg) no-repeat;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+
+        .content2:nth-child(2n+1) {
+            background-color: red;
+        }
+
+        .content2:nth-child(2n+0) {
+            background-color: blue;
+        }
+
+        /* ------- */
 
         .outter {
             width: 10%;
@@ -220,14 +283,62 @@
         </div>
     </div>
 
-    <hr/>
+    <hr />
+
+    <p>用flex实现, 并且带description - 个人感觉此种实现较好</p>
+    <div class="container2">
+        <div class="content-outter">
+            <div class="content2">
+                <div class="images">
+                    <span></span>
+                </div>
+            </div>
+            <h5>11111</h5>
+            <p>22222</p>
+        </div>
+
+        <div class="content-outter">
+        </div>
+
+        <div class="content-outter">
+            <div class="content2">
+                <div class="images">
+                    <span></span>
+                </div>
+            </div>
+            <h5>11111</h5>
+            <p>22222</p>
+        </div>
+
+        <div class="content-outter">
+            <div class="content2">
+                <div class="images">
+                    <span></span>
+                </div>
+            </div>
+            <h5>11111</h5>
+            <p>22222</p>
+        </div>
+
+        <div class="content-outter">
+            <div class="content2">
+                <div class="images">
+                    <span></span>
+                </div>
+            </div>
+            <h5>11111</h5>
+            <p>22222</p>
+        </div>
+    </div>
+
+    <hr />
 
     <div class="outter">
         <div class="image-header">
             <div class="img">a</div>
         </div>
     </div>
-    
+
 
 </body>
 
