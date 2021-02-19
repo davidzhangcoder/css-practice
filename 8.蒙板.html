@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loading {
+            background: rgba(184, 181, 181, 0.4) !important;
+
+            z-index: 99;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* pointer-events: none; //使用此属性，可实现，遮罩层显示后，遮罩层底下的，按钮可点击，还有可以滚动 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loading">
+
+    </div>
+
+    <input type="button" id="testbutton" value="test">
+
+    <script>
+        function doclick(){
+            console.log("doclick")
+        }
+        document.getElementById("testbutton").onclick=doclick
+    </script>
+</body>
+
+</html>

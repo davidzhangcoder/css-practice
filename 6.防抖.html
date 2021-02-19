@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // way1 - 这个较好
+        function debounce(fn, wait) {
+            console.log("running debounce");
+            var timeout = null;
+            return function () {
+                if (timeout !== null)
+                    clearTimeout(timeout);
+                timeout = setTimeout(fn, wait);
+            }
+        }
+        // 处理函数
+        function handle() {
+            console.log(Math.random());
+        }
+        // 滚动事件
+        window.addEventListener('scroll', debounce(handle, 1000));
+    </script>
+</head>
+
+<body>
+    <div id="testa">a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>a</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+    <div>b</div>
+
+    <input type="text" id="debounce">
+
+    <script>
+        document.getElementById('testa').onclick = function () {
+            console.log("ok")
+        }
+
+        //模拟一段ajax请求
+        function ajax(content) {
+            console.log('ajax request ' + content)
+        }
+
+        //way2
+        function debounce(fun, delay) {
+            return function (args) {
+                let that = this
+                let _args = args
+                clearTimeout(fun.id)
+                fun.id = setTimeout(function () {
+                    fun.call(that, _args)
+                }, delay)
+            }
+        }
+
+        let inputb = document.getElementById('debounce')
+
+        let debounceAjax = debounce(ajax, 500)
+
+        inputb.addEventListener('keyup', function (e) {
+            console.log("ok - keyup")
+            debounceAjax(e.target.value)
+        })
+    </script>
+</body>
+
+</html>
